@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+start_dir=$(pwd)
 ROOT=$(dirname $0)/..
 cd $ROOT
 
@@ -10,11 +11,11 @@ if [ -z "$1" -o -z "$2" ]; then
     false
 fi
 
-schema=$1
-target=$2
-ignoreset=$3
+schema=$start_dir/$1
+target=$start_dir/$2
+ignoreset=$start_dir/$3
 
-echo Executing validator $schema $target...
+echo Executing validator ${schema#$start_dir/} ${target#$start_dir/}...
 
 schemafile=$(realpath $schema)
 if [ -d $schemafile ]; then
@@ -27,7 +28,7 @@ else
     target=${fulltarget#$schemadir/}
 fi
 
-echo Running schema $schemafile in $schemadir
+echo Running schema ${schemafile#$start_dir/} in $schemadir
 
 rm -rf $schemadir/out
 

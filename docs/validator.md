@@ -23,12 +23,12 @@ Specifying a directory, rather than a specific schema or input, will run against
 An output file is generated that has details about the schema validation result.
 
 <pre>
-~/daq/validator$ <b>bin/run.sh schemas/simple/simple.json schemas/simple/simple.tests/example.json</b>
+~/daq$ <b>validator/bin/run.sh schemas/simple/simple.json schemas/simple/simple.tests/example.json</b>
 
 BUILD SUCCESSFUL in 3s
 2 actionable tasks: 2 executed
 Executing validator schemas/simple/simple.json schemas/simple/simple.tests/example.json...
-Running schema simple.json in /home/user/daq/validator/schemas/simple
+Running schema simple.json in /home/user/daq/schemas/simple
 Validating example.json against simple.json
 Validation complete, exit 0
 </pre>
